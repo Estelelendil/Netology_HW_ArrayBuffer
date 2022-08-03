@@ -1,11 +1,13 @@
 {
   "parser": "@babel/eslint-parser",
   "extends": "airbnb-base",
-  "plugins": ["@babel"],
+  "plugins": [
+    "@babel"
+  ],
   "env": {
-     "es6": true,
-     "browser": true,
-     "jest": true
+    "es6": true,
+    "browser": true,
+    "jest": true
   },
   "rules": {
     "no-restricted-syntax": [
@@ -13,6 +15,7 @@
       "LabeledStatement",
       "WithStatement"
     ],
-    "@babel/semi": 1
+    "@babel/semi": 1,
+    "linebreak-style": "off"
   }
 }

@@ -1,7 +1,5 @@
-export default function sum(items) {
-  let result = 0;
-  for (const item of items) {
-    result += item;
-  }
-  return result;
-}
+// import {
+//   Swordsman, Bowman, Magician, Daemon, Undead, Zombie,
+// } from '../class';
+
+// const persMagician = new Magician('Din');
