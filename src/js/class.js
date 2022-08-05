@@ -4,6 +4,8 @@ class Character {
 
     level = 1;
 
+    datura = false;
+
     attack;
 
     defence;
@@ -38,6 +40,18 @@ class Character {
 
       throw new Error('Sorry, ничего не полчится, Вы мертвы');
     }
+
+    getAttack(dist) {
+      let curAttack = this.attack * (11 - dist) * 0.1;
+      if (this.datura === true) {
+        curAttack -= Math.log2(dist) * 5;
+      }
+      return curAttack;
+    }
+
+    setStoned() {
+      this.datura = true;
+    }
 }
 
 export default Character;
@@ -47,15 +61,6 @@ export class Magician extends Character {
     super(name, 'Magician');
     this.attack = 100;
     this.defence = 40;
-    this.datura = false;
-  }
-
-  getAttack(dist) {
-    let curAttack = this.attack * (11 - dist) * 0.1;
-    if (this.datura === true) {
-      curAttack -= Math.log2(dist) * 5;
-    }
-    return curAttack;
   }
 }
 
@@ -64,14 +69,5 @@ export class Daemon extends Character {
     super(name, 'Daemon');
     this.attack = 100;
     this.defence = 40;
-    this.datura = false;
-  }
-
-  getAttack(dist) {
-    let curAttack = this.attack * (11 - dist) * 0.1;
-    if (this.datura === true) {
-      curAttack = Math.log2(dist) * 5;
-    }
-    return curAttack;
   }
 }

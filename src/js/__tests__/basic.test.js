@@ -22,12 +22,12 @@ describe('testing method getAttack', () => {
     expect(result).toBe(expected);
   });
   test('test getAttack function with datura in class Daemon', () => {
-    persDaemon.datura = true;
-    expect(persDaemon.getAttack(8)).toBe(15);
+    persDaemon.setStoned();
+    expect(persDaemon.getAttack(4)).toBe(60);
   });
 
   test('test getAttack function with datura in class Magician', () => {
-    persMagician.datura = true;
-    expect(persMagician.getAttack(4)).toBe(60);
+    persMagician.setStoned();
+    expect(persMagician.getAttack(8)).toBe(15);
   });
 });
